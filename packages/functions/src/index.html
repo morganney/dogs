@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Functions</title>
+    <style>
+      body {
+        font-family: 'Source Code Pro', monospace;
+      }
+      pre {
+        white-space: pre-line;
+      }
+      pre span {
+        margin-left: 20px;
+      }
+      #block {
+        width: 50px;
+        height: 50px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <pre>
+          <code>
+            function delay(ms) {
+              <span>return new Promise(resolve => setTimeout(resolve, ms))</span>
+            }
+          </code>
+        </pre>
+        <button id="delay">Alert "done!" after 2 seconds</button>
+      </div>
+      <div>
+        <pre>
+          <code>
+            function animateRight(el) {
+              <span>el.style.setProperty('transition', 'transform 1s')</span>
+              <span>el.style.setProperty('transform', `translate(${el.getBoundingClientRect().x + 100}px)`)</span>
+            }
+          </code>
+        </pre>
+        <p id="block"></p>
+        <button id="animateRight">Animate the square above</button>
+      </div>
+      <div>
+        <pre>
+          <code>
+            function removeDuplicates(xs) {
+              <span>return Array.from(new Set(xs))</span>
+            }
+          </code>
+        </pre>
+        <p>
+          <code>[5, true, false, true, 7, 7]</code>
+        </p>
+        <button id="removeDuplicates">Remove duplicates from above array</button>
+      </div>
+    </main>
+    <script type="module">
+      import { demo } from './index.js'
+
+      demo()
+    </script>
+  </body>
+</html>

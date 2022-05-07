@@ -1,0 +1,42 @@
+{
+  "name": "dogs",
+  "version": "1.0.0",
+  "description": "Highlight the free Dog API",
+  "main": "index.js",
+  "scripts": {
+    "start:react": "webpack server -c ./packages/react/webpack.config.babel.js",
+    "start:functions": "http-server ./packages/functions/src",
+    "build:react": "webpack -c ./packages/react/webpack.config.babel.js",
+    "lint:react": "eslint ./packages/react/src --ext .js",
+    "lint:react:fix": "npm run lint:react -- --fix"
+  },
+  "author": "Morgan Ney <morganney@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=8.5.5",
+    "node": ">=16.15.0"
+  },
+  "workspaces": [
+    "packages/react",
+    "packages/functions"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.17.7",
+    "babel-loader": "^8.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.0",
+    "prettier": "^2.6.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
